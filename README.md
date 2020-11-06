@@ -2,8 +2,8 @@
 Quiz 2 evaluation for Web Programming class B / E
 
 Team members:
-| NRP            | Name                     |
-|----------------|--------------------------|
-| 05111840000011 | Bryan Gautama Ngo        |
-| 05111840000038 | Sheinna Yendri           |
-| 05111840000102 | Emmanuel Maximus Yohanes |
+| NRP            | Name                     | Class |
+|----------------|--------------------------|-------|
+| 05111840000011 | Bryan Gautama Ngo        | B     |
+| 05111840000102 | Emmanuel Maximus Yohanes | B     |
+| 05111840000038 | Sheinna Yendri           | E     |
