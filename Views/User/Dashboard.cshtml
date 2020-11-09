@@ -8,4 +8,14 @@
 @if (Session["fullname"] != null)
 {
     <text>Welcome @Session["fullname"].ToString()</text>
+
+    <div>
+        @Html.ActionLink("Logout", "Logout")
+    </div>
+
+    @*<div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <div value="Logout" class="btn btn-warning">@Html.ActionLink("Logout", "Logout", "User")</div>
+        </div>
+    </div>*@
 }
