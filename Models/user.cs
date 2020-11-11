@@ -11,18 +11,21 @@ namespace webpro_quiz2.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class user
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public user()
+        {
+            this.events = new HashSet<@event>();
+        }
+    
         public int user_id { get; set; }
-
-        [DataType(DataType.EmailAddress)]
         public string email { get; set; }
-
-        [DataType(DataType.Password)]
         public string password { get; set; }
-
         public string fullname { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<@event> events { get; set; }
     }
 }

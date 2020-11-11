@@ -1,8 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="EventsCoModelStoreContainer" CdmEntityContainer="EventsCoEntities">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EventsCoEntities">
+    <EntitySetMapping Name="events">
+      <EntityTypeMapping TypeName="Model.event">
+        <MappingFragment StoreEntitySet="event">
+          <ScalarProperty Name="event_id" ColumnName="event_id" />
+          <ScalarProperty Name="event_organizer" ColumnName="event_organizer" />
+          <ScalarProperty Name="event_name" ColumnName="event_name" />
+          <ScalarProperty Name="event_price" ColumnName="event_price" />
+          <ScalarProperty Name="event_place" ColumnName="event_place" />
+          <ScalarProperty Name="event_start_date" ColumnName="event_start_date" />
+          <ScalarProperty Name="event_start_time" ColumnName="event_start_time" />
+          <ScalarProperty Name="event_end_date" ColumnName="event_end_date" />
+          <ScalarProperty Name="event_end_time" ColumnName="event_end_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="users">
-      <EntityTypeMapping TypeName="EventsCoModel.user">
+      <EntityTypeMapping TypeName="Model.user">
         <MappingFragment StoreEntitySet="user">
           <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="email" ColumnName="email" />

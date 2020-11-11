@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\git\webpro-quiz2\Models\EventsCoModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Kuliah\Sem5\PWeb\webpro-quiz2\Models\EventsCoModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

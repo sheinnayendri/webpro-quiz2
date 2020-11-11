@@ -25,6 +25,7 @@ namespace webpro_quiz2.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<@event> events { get; set; }
         public virtual DbSet<user> users { get; set; }
     }
 }
