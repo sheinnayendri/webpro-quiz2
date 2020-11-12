@@ -10,21 +10,25 @@ namespace webpro_quiz2.Controllers
     {
         public ActionResult Index()
         {
+            if (Session["user_id"] != null)
+            {
+                return RedirectToAction("Dashboard", "User", new { area = "" });
+            }
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+        //public ActionResult About()
+        //{
+        //    ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
+        //    return View();
+        //}
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+        //public ActionResult Contact()
+        //{
+        //    ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
+        //    return View();
+        //}
     }
 }
