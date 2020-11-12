@@ -13,6 +13,10 @@ namespace webpro_quiz2.Controllers
         // GET: Event
         public ActionResult CreateEvent()
         {
+            if (Session["user_id"] == null)
+            {
+                return RedirectToAction("Dashboard", "User", new { area = "" });
+            }
             return View();
         }
 
@@ -32,10 +36,24 @@ namespace webpro_quiz2.Controllers
         
         public ActionResult EditEvent(int id)
         {
+            if (Session["user_id"] == null)
+            {
+                return RedirectToAction("Dashboard", "User", new { area = "" });
+            }
             using (EventsCoEntities db = new EventsCoEntities())
             {
                 var data = db.events.Where(x => x.event_id == id).SingleOrDefault();
-                return View(data);
+                var e = (from a in db.events where a.event_id == id select a).FirstOrDefault();
+                if(e != null)
+                {
+                    var org = e.event_organizer;
+                    if (Convert.ToInt32(Session["user_id"]) != org)
+                    {
+                        return RedirectToAction("Dashboard", "User", new { area = "" });
+                    }
+                    return View(data);
+                }
+                else return RedirectToAction("Dashboard", "User", new { area = "" });
             }
                 
         }

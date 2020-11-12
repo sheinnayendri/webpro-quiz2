@@ -41,6 +41,7 @@ namespace webpro_quiz2.Models
         [Required]
         [DisplayName("Start Date")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime event_start_date { get; set; }
 
         [Required]
