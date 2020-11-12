@@ -51,6 +51,12 @@ namespace webpro_quiz2.Controllers
                     {
                         return RedirectToAction("Dashboard", "User", new { area = "" });
                     }
+                    //var start_date = e.event_start_date.ToString("dd/MM/yyyy");
+                    //var end_date = e.event_end_date.ToString("dd/MM/yyyy");
+                    //ViewData["StartDate"] = start_date;
+                    //ViewData["EndDate"] = end_date;
+                    //data.event_start_date = Convert.ToDateTime(start_date);
+                    //data.event_end_date = Convert.ToDateTime(end_date);
                     return View(data);
                 }
                 else return RedirectToAction("Dashboard", "User", new { area = "" });

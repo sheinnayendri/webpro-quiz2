@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "EditEvent";
+    //var start_date = (String)ViewData["StartDate"];
+    //var end_date = (String)ViewData["EndDate"];
 }
 
 <h2>EditEvent</h2>
@@ -10,7 +12,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
 <div class="form-horizontal">
     <h4>event</h4>
     <hr />
@@ -59,7 +61,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.event_start_date, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.event_start_date, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.event_start_date, new { htmlAttributes = new { @class = "form-control"} })
             @Html.ValidationMessageFor(model => model.event_start_date, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -75,7 +77,10 @@
     <div class="form-group">
         @Html.LabelFor(model => model.event_end_date, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.event_end_date, new { htmlAttributes = new { @class = "form-control" } })
+            @*<input type="date" value="2020-11-11" />
+            <input class="form-control text-box single-line" data-val-date="The fiels End Date must be a date." data-val-required="The End Data field is required." id="event_end_date" name="event_end_date" type="date" value=@start_date />
+            <span class="field-validation-valid text-danger" data-valmsg-for="event_start_date"></span>*@
+            @Html.EditorFor(model => model.event_end_date, new { htmlAttributes = new { @class = "form-control"} })
             @Html.ValidationMessageFor(model => model.event_end_date, "", new { @class = "text-danger" })
         </div>
     </div>
