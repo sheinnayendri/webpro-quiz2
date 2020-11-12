@@ -80,7 +80,12 @@ namespace webpro_quiz2.Controllers
         {
             if (Session["user_id"] != null)
             {
-                return View();
+                using (EventsCoEntities db = new EventsCoEntities())
+                {
+                    var result = db.events.ToList();
+
+                    return View(result);
+                }
             }
             else
             {

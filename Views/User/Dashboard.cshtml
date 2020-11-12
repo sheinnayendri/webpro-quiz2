@@ -1,4 +1,6 @@
-﻿
+﻿@using webpro_quiz2.Models
+@model IEnumerable<webpro_quiz2.Models.@event>
+
 @{
     ViewBag.Title = "Dashboard";
 }
@@ -9,13 +11,52 @@
 {
     <text>Welcome @Session["fullname"].ToString()</text>
 
+    <head>
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
     <div>
         @Html.ActionLink("Logout", "Logout")
     </div>
 
+    <body>
+
+        @Html.ActionLink("Create New Event", "CreateEvent", "Event")
+        <table class="table table-bordered">
+            <tr>
+                <th>Event Name</th>
+                <th>Event Place</th>
+                <th>Event Start Date</th>
+                <th>Event Start Time</th>
+                <th>Event End Date</th>
+                <th>Event End Time</th>
+                <th>Price</th>
+                <th colspan="2">Acttion</th>
+
+            </tr>
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>@item.event_name</td>
+            <td>@item.event_place</td>
+            <td>@item.event_start_date</td>
+            <td>@item.event_start_time</td>
+            <td>@item.event_end_date</td>
+            <td>@item.event_end_time</td>
+            <td>@item.event_price</td>
+            @if (item.event_organizer == Convert.ToInt32(@Session["user_id"]) + 1)
+            {
+                <td>@Html.ActionLink("Edit Event", "EditEvent", "Event", new { id = item.event_id }, null)</td>
+                <td>@Html.ActionLink("Delete Event", "DeleteEvent", "Event", new { id = item.event_id }, null)</td>
+            }
+
+        </tr>
+            }
+        </table>
+    </body>
     @*<div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <div value="Logout" class="btn btn-warning">@Html.ActionLink("Logout", "Logout", "User")</div>
-        </div>
-    </div>*@
+            <div class="col-md-offset-2 col-md-10">
+                <div value="Logout" class="btn btn-warning">@Html.ActionLink("Logout", "Logout", "User")</div>
+            </div>
+        </div>*@
 }
