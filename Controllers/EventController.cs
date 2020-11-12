@@ -57,6 +57,8 @@ namespace webpro_quiz2.Controllers
                     //ViewData["EndDate"] = end_date;
                     //data.event_start_date = Convert.ToDateTime(start_date);
                     //data.event_end_date = Convert.ToDateTime(end_date);
+                    data.event_price = Convert.ToInt32(data.event_price);
+                    ViewData["price"] = Convert.ToInt32(data.event_price);
                     return View(data);
                 }
                 else return RedirectToAction("Dashboard", "User", new { area = "" });
