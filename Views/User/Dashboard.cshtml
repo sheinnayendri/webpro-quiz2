@@ -5,13 +5,11 @@
     ViewBag.Title = "Dashboard";
 }
 
-<h2>Dashboard</h2>
 
-@if (Session["fullname"] != null)
+@*@if (Session["fullname"] != null)
 {
     <text>Welcome @Session["fullname"].ToString()</text>
-}
-
+}*@
 <head>
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -25,6 +23,11 @@
         a:hover {
             color: #FF5722;
         }
+        
+        td, th{
+            text-align:center;
+            vertical-align:middle;
+        }
     </style>
 </head>
 @*<div>
@@ -32,10 +35,14 @@
             @Html.ActionLink("Logout", "Logout")
         </button>
     </div>*@
+<div style="text-align:center;">
+    <h2>Welcome @Session["fullname"].ToString()!</h2>
+    <span style="white-space: pre-line"></span>
+    <h2 style="margin-top:-5px">What event do you want to attend?</h2>
+</div>
+<body style="background-color:#f8fafc;">
 
-<body>
-
-    <div class="card-body text-center d-flex flex-row justify-content-between w-75 mx-auto">
+    <div class="card-body text-center d-flex flex-row justify-content-between w-75 mx-auto" style="margin-top:30px;">
         <button type="submit" class="btn btn-primary w-100">
             @Html.ActionLink("Create New Event", "CreateEvent", "Event")
         </button>
@@ -44,8 +51,8 @@
     <br>
 
     <div class="card my-2">
-        <table class="table table-bordered">
-            <tr>
+        <table class="table table-bordered" style="text-align:center">
+            <tr style="background-color: #d6e9f9;">
                 <th>Event Name</th>
                 <th>Event Place</th>
                 <th>Event Start Date</th>
