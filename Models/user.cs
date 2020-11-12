@@ -11,6 +11,7 @@ namespace webpro_quiz2.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
     public partial class user
@@ -24,15 +25,18 @@ namespace webpro_quiz2.Models
         public int user_id { get; set; }
 
         [Required]
+        [DisplayName("Email Address")]
         [StringLength(50)]
         [DataType(DataType.EmailAddress)]
         public string email { get; set; }
 
         [Required]
+        [DisplayName("Password")]
         [DataType(DataType.Password)]
         public string password { get; set; }
 
         [Required]
+        [DisplayName("Full Name")]
         [StringLength(200)]
         public string fullname { get; set; }
     

@@ -35,7 +35,7 @@ namespace webpro_quiz2.Controllers
             using (EventsCoEntities db = new EventsCoEntities())
             {
                 var data = db.events.Where(x => x.event_id == id).SingleOrDefault();
-                return View();
+                return View(data);
             }
                 
         }
