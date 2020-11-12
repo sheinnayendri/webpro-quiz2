@@ -22,6 +22,7 @@ namespace webpro_quiz2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(user user)
         {
+            ModelState.Remove("fullname");
             if (ModelState.IsValid)
             {
                 using (EventsCoEntities db = new EventsCoEntities())

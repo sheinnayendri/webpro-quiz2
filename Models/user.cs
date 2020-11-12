@@ -23,12 +23,17 @@ namespace webpro_quiz2.Models
     
         public int user_id { get; set; }
 
+        [Required]
+        [StringLength(50)]
         [DataType(DataType.EmailAddress)]
         public string email { get; set; }
 
+        [Required]
         [DataType(DataType.Password)]
         public string password { get; set; }
 
+        [Required]
+        [StringLength(200)]
         public string fullname { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
