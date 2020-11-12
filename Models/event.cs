@@ -11,17 +11,28 @@ namespace webpro_quiz2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class @event
     {
         public int event_id { get; set; }
         public int event_organizer { get; set; }
         public string event_name { get; set; }
+
+        [DataType(DataType.Currency)]
         public decimal event_price { get; set; }
         public string event_place { get; set; }
+
+        [DataType(DataType.Date)]
         public System.DateTime event_start_date { get; set; }
+
+        [DataType(DataType.Time)]
         public System.TimeSpan event_start_time { get; set; }
+
+        [DataType(DataType.Date)]
         public System.DateTime event_end_date { get; set; }
+
+        [DataType(DataType.Time)]
         public System.TimeSpan event_end_time { get; set; }
     
         public virtual user user { get; set; }
