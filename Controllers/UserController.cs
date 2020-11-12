@@ -73,7 +73,7 @@ namespace webpro_quiz2.Controllers
             Session["email"] = null;
             Session["fullname"] = null;
             Session.Abandon();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Home", new { area = "" });
         }
 
         public ActionResult Dashboard()
