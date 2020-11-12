@@ -25,12 +25,13 @@
 
         .form-control, .btn {
             min-height: 38px;
-            border-radius: 2px;
+            max-width: unset !important;
         }
 
         .btn {
             font-size: 15px;
             font-weight: bold;
+            padding: 6px 80px;
         }
 
         .center {
@@ -74,16 +75,16 @@
 <div class="form-horizontal jumbotron center" style="border:solid;border-color:black;padding:25px;display:flex;align-items:center;justify-content:center">
     <div class="card">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group" style="width:35vw;display:flex;flex-direction:column">
-            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2", @style = "width:100%; text-align:left;" })
+        <div class="form-group" style="width:35vw;display:flex;flex-direction:column;align-items:center">
+            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-10", @style = "text-align:left;" })
             <div class="col-md-10 ">
                 @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group" style="width:35vw;display:flex;flex-direction:column">
-            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2", @style = "width:100%; text-align:left;" })
+        <div class="form-group" style="width:35vw;display:flex;flex-direction:column;align-items:center">
+            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-10", @style = "text-align:left;" })
             <div class="col-md-10 ">
                 @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
@@ -91,8 +92,8 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Login" class="btn btn-primary" />
+            <div>
+                <input type="submit" value="Login" class="btn btn-primary"/>
             </div>
         </div>
     </div>
