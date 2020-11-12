@@ -22,7 +22,7 @@ namespace webpro_quiz2.Controllers
         {
             using (EventsCoEntities db = new EventsCoEntities())
             {
-                ev.event_organizer = Convert.ToInt32(Session["user_id"]) + 1;
+                ev.event_organizer = Convert.ToInt32(Session["user_id"]);
                 db.events.Add(ev);
                 db.SaveChanges();
                 return RedirectToAction("Dashboard", "User", new { area = "" });

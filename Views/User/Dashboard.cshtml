@@ -44,7 +44,7 @@
             <td>@item.event_end_date.ToLongDateString()</td>
             <td>@item.event_end_time</td>
             <td>@item.event_price</td>
-            @if (item.event_organizer == Convert.ToInt32(@Session["user_id"]) + 1)
+            @if (item.event_organizer == Convert.ToInt32(@Session["user_id"]))
             {
                 <td>@Html.ActionLink("Edit Event", "EditEvent", "Event", new { id = item.event_id }, null)</td>
                 <td>@Html.ActionLink("Delete Event", "DeleteEvent", "Event", new { id = item.event_id }, null)</td>
